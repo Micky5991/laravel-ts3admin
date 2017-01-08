@@ -1,0 +1,29 @@
+{
+  "name": "micky5991/laravel-ts3admin",
+  "description": "Laravel integration for par0noid/ts3admin",
+  "type": "library",
+  "license": "GPL-3.0",
+  "minimum-stability": "stable",
+  "require": {
+    "par0noid/ts3admin": "dev-composer"
+  },
+  "version": "0.0.1",
+  "autoload": {
+    "psr-4": {
+      "Micky5991\\laravel-ts3admin": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/M4UR1C3PR3/ts3admin.class"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Francesco Paolocci",
+      "homepage": "https://github.com/micky5991",
+      "role": "Developer"
+    }
+  ]
+}

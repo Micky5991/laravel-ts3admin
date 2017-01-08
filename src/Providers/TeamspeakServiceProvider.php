@@ -3,6 +3,7 @@
 namespace Micky5991\laravel_ts3admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Micky5991\laravel_ts3admin\Exceptions\TeamspeakException;
 use par0noid\ts3admin\ts3admin;
 
 class TeamspeakServiceProvider extends ServiceProvider
@@ -16,7 +17,9 @@ class TeamspeakServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            dirname(__DIR__).'/teamspeak.php' => config_path('teamspeak.php'),
+        ]);
     }
 
     /**
@@ -28,7 +31,7 @@ class TeamspeakServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ts3admin::class, function ($app) {
             $ts = new ts3admin(
-                env('TS_HOST', '127.0.0.1'),
+                '127.0.0.1',
                 env('TS_QUERY_PORT', 10011),
                 env('TS_QUERY_SOCKET_TIMEOUT', 2)
             );
@@ -39,8 +42,11 @@ class TeamspeakServiceProvider extends ServiceProvider
                         env('TS_QUERY_PASS')
                     )
                 )) {
-                    if ($ts->succeeded($ts->selectServer(env('TS_SERVER_PORT', 9987)))) {
-                        return $ts;
+                    $name = env('TS_QUERY_NICK');
+                    if($name == null || $ts->succeeded($ts->setName($name))) {
+                        if ($ts->succeeded($ts->selectServer(env('TS_SERVER_PORT', 9987)))) {
+                            return $ts;
+                        }
                     }
                 }
             }

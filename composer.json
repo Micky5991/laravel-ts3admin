@@ -5,12 +5,13 @@
   "license": "GPL-3.0",
   "minimum-stability": "stable",
   "require": {
-    "par0noid/ts3admin": "dev-composer"
+    "par0noid/ts3admin": "dev-composer",
+    "laravel/framework": "^5.3"
   },
   "version": "0.0.1",
   "autoload": {
     "psr-4": {
-      "Micky5991\\laravel-ts3admin": "src"
+      "Micky5991\\laravel_ts3admin\\": "src"
     }
   },
   "repositories": [

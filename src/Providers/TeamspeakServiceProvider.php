@@ -18,7 +18,7 @@ class TeamspeakServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            dirname(__DIR__).'/teamspeak.php' => config_path('teamspeak.php'),
+            dirname(__DIR__) . '/teamspeak.php' => config_path('teamspeak.php'),
         ]);
     }
 
@@ -36,15 +36,15 @@ class TeamspeakServiceProvider extends ServiceProvider
                 config('teamspeak.timeout')
             );
             if ($ts->succeeded($ts->connect())) {
-                if($ts->succeeded(
+                if ($ts->succeeded(
                     $ts->login(
                         config('teamspeak.query.username'),
                         config('teamspeak.query.password')
                     )
                 )) {
-                    $name = config('teamspeak.nickname');
-                    if($name == null || $ts->succeeded($ts->setName($name))) {
-                        if ($ts->succeeded($ts->selectServer(config('teamspeak.port')))) {
+                    if ($ts->succeeded($ts->selectServer(config('teamspeak.port')))) {
+                        $name = config('teamspeak.nickname');
+                        if ($name == null || $ts->succeeded($ts->setName($name))) {
                             return $ts;
                         }
                     }

@@ -31,20 +31,20 @@ class TeamspeakServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ts3admin::class, function ($app) {
             $ts = new ts3admin(
-                '127.0.0.1',
-                env('TS_QUERY_PORT', 10011),
-                env('TS_QUERY_SOCKET_TIMEOUT', 2)
+                config('teamspeak.host'),
+                config('teamspeak.query.port'),
+                config('teamspeak.timeout')
             );
             if ($ts->succeeded($ts->connect())) {
                 if($ts->succeeded(
                     $ts->login(
-                        env('TS_QUERY_USER', 'serveradmin'),
-                        env('TS_QUERY_PASS')
+                        config('teamspeak.query.username'),
+                        config('teamspeak.query.password')
                     )
                 )) {
-                    $name = env('TS_QUERY_NICK');
+                    $name = config('teamspeak.nickname');
                     if($name == null || $ts->succeeded($ts->setName($name))) {
-                        if ($ts->succeeded($ts->selectServer(env('TS_SERVER_PORT', 9987)))) {
+                        if ($ts->succeeded($ts->selectServer(config('teamspeak.port')))) {
                             return $ts;
                         }
                     }

@@ -1,18 +1,35 @@
 # laravel-ts3admin
 Laravel integration for [par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class)
 
-#### Installation
-1. Add this git repository to your `composer.json`: `composer config repo.laravel-ts3admin git https://github.com/Micky5991/laravel-ts3admin`
-2. `composer require micky5991/laravel-ts3admin`
-3. Add Service Provider to your `app.php` configuration-file:
-```php
+### Installation
+1. `composer require micky5991/laravel-ts3admin`
+2. Add Service Provider to your `app.php` configuration-file:
+    ```php
    Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class
    ```
-4. Copy configuration to config-folder: `php artisan vendor:publish` 
+3. Copy configuration to config-folder: `php artisan vendor:publish` 
 
-_If you only want to publish this package:_ `php artsan vendor:publish --provider=Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider`
-> Adding a repository to your `composer.json` is only needed as long this package is not available at [Packagist.org](https://packagist.org/)!
+4. Add environmental variables to your `.env`
+```
+TS_SERVER_HOST=127.0.0.1
+TS_SERVER_PORT=9987
+TS_SERVER_TIMEOUT=1
+TS_QUERY_PORT=10011
+TS_QUERY_USERNAME=serveradmin
+TS_QUERY_PASSWORD=secretpassword
+```
 
-##### Remove repository from `composer.json`
+##### Example
+An example for a controller to the `/clients` endpoint that lists all connected clients.
+```php
+Route::get('/clients', function(\par0noid\ts3admin\ts3admin $ts) {
+    $result = $ts->clientList();
+    if($ts->succeeded($result)) {
+        $users = $ts->getElement("data", $result);
+        return $users;
+    } else {
+        return "Connection failed";
+    }
+});
 
-1. `composer config --unset repo.laravel-ts3admin`
+```

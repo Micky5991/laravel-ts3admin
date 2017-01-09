@@ -8,7 +8,7 @@
     "par0noid/ts3admin": "dev-composer",
     "laravel/framework": "^5.3"
   },
-  "version": "0.0.3",
+  "version": "0.0.3.1",
   "autoload": {
     "psr-4": {
       "Micky5991\\laravel_ts3admin\\": "src"

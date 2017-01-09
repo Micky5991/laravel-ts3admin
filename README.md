@@ -4,9 +4,9 @@ Laravel integration for [par0noid's ts3admin.class](https://github.com/par0noid/
 ### Installation
 1. `composer require micky5991/laravel-ts3admin`
 2. Add Service Provider to your `app.php` configuration-file:
-    ```php
-   Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class
-   ```
+```php
+Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class
+```
 3. Copy configuration to config-folder: `php artisan vendor:publish` 
 
 4. Add environmental variables to your `.env`

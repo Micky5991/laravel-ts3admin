@@ -1,5 +1,5 @@
 # laravel-ts3admin
-Laravel integration for [par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class)
+[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.3
 
 ### Installation
 1. `composer require micky5991/laravel-ts3admin`

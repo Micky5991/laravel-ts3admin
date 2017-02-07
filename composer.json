@@ -1,14 +1,14 @@
 {
   "name": "micky5991/laravel-ts3admin",
-  "description": "Laravel integration for par0noid/ts3admin",
+  "description": "par0noid/ts3admin integration for Laravel 5.3",
   "type": "library",
   "license": "GPL-3.0",
   "minimum-stability": "stable",
   "require": {
-	"par0noid/ts3admin": "^1.0.2.1",
-    "laravel/framework": "^5.3"
+    "laravel/framework": "^5.3",
+    "par0noid/ts3admin": "^1.0.2.1"
   },
-  "version": "0.0.3.2",
+  "version": "0.0.4",
   "autoload": {
     "psr-4": {
       "Micky5991\\laravel_ts3admin\\": "src"

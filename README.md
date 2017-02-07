@@ -29,7 +29,7 @@ After completing all steps from above you should have a configuration file under
 ### Example
 An example for a controller to the `/clients` endpoint that lists all connected clients.
 ```php
-Route::get('/users', function(ts3admin $ts) {
+Route::get('/users', function(\ts3admin $ts) {
     $result = $ts->clientList();
     if($ts->succeeded($result)) {
         $users = $ts->getElement("data", $result);

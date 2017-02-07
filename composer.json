@@ -8,7 +8,7 @@
     "laravel/framework": "^5.3",
     "par0noid/ts3admin": "^1.0.2.1"
   },
-  "version": "0.0.4",
+  "version": "1.0.1",
   "autoload": {
     "psr-4": {
       "Micky5991\\laravel_ts3admin\\": "src"

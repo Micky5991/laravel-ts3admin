@@ -2,7 +2,7 @@
 namespace Micky5991\laravel_ts3admin\Exceptions;
 
 use Exception;
-use par0noid\ts3admin\ts3admin;
+use \ts3admin;
 
 class TeamspeakException extends Exception
 {

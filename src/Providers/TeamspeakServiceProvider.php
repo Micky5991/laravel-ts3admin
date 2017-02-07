@@ -4,7 +4,7 @@ namespace Micky5991\laravel_ts3admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Micky5991\laravel_ts3admin\Exceptions\TeamspeakException;
-use par0noid\ts3admin\ts3admin;
+use \ts3admin;
 
 class TeamspeakServiceProvider extends ServiceProvider
 {

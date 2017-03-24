@@ -3,7 +3,6 @@
 namespace Micky5991\laravel_ts3admin\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Micky5991\laravel_ts3admin\Exceptions\TeamspeakException;
 use \ts3admin;
 
 class TeamspeakServiceProvider extends ServiceProvider
@@ -50,7 +49,7 @@ class TeamspeakServiceProvider extends ServiceProvider
                     }
                 }
             }
-            throw new TeamspeakException($ts);
+            return $ts;
         });
     }
 

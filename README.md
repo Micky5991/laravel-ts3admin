@@ -1,7 +1,13 @@
 # laravel-ts3admin
-[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.3
+[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.3 and higher
 
 > **INFO:** This package uses a singleton to access a **single** ts3admin.class-object. So you currently **can't access multiple TeamSpeak-3-Servers**!
+
+### Supported Laravel Versions
+
+**Laravel 5.3: *** :heavy_check_mark:
+**Laravel 5.4: *** :heavy_check_mark:
+**Laravel 5.5: *** :heavy_check_mark:
 
 ### Installation
 - `composer require micky5991/laravel-ts3admin`

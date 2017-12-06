@@ -1,6 +1,6 @@
 {
   "name": "micky5991/laravel-ts3admin",
-  "description": "par0noid/ts3admin integration for Laravel 5.3",
+  "description": "par0noid/ts3admin integration for Laravel 5.3 and higher",
   "type": "library",
   "license": "GPL-3.0",
   "minimum-stability": "stable",

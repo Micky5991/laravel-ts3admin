@@ -6,7 +6,7 @@
   "minimum-stability": "stable",
   "require": {
     "laravel/framework": "^5.3",
-    "par0noid/ts3admin": "^1.0.2.3"
+    "par0noid/ts3admin": "^1.0.2.1"
   },
   "version": "1.2.0",
   "autoload": {

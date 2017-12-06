@@ -5,9 +5,15 @@
 
 ### Supported Laravel Versions
 
-**Laravel 5.3: *** :heavy_check_mark:
-**Laravel 5.4: *** :heavy_check_mark:
-**Laravel 5.5: *** :heavy_check_mark:
+| Laravel Version | Supported | 
+| --------------- |:---------:|
+| 5.3 | :heavy_check_mark: |
+| 5.4 | :heavy_check_mark: |
+| 5.4 | :heavy_check_mark: |
+
+* **Laravel 5.3: *** :heavy_check_mark:
+* **Laravel 5.4: *** :heavy_check_mark:
+* **Laravel 5.5: *** :heavy_check_mark:
 
 ### Installation
 - `composer require micky5991/laravel-ts3admin`

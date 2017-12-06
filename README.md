@@ -5,6 +5,8 @@
 
 ### Installation
 - `composer require micky5991/laravel-ts3admin`
+
+*If you use Laravel 5.5+ you are already done, otherwise continue:**
 - Add Service Provider to your `app.php` configuration-file:
 ```php
 Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class

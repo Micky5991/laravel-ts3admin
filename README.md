@@ -21,7 +21,7 @@ Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class
 ```
 - Copy configuration to config-folder: 
 ```bash 
-$ php artisan vendor:publish
+$ php artisan vendor:publish --provider=Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider
 ``` 
 
 - Add environmental variables to your `.env`

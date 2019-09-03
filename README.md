@@ -1,5 +1,5 @@
 # laravel-ts3admin
-[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.3 and higher
+[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.5 and higher
 
 **INFO:** This package uses a singleton to access a **single** ts3admin.class-object. So you currently **can't access multiple TeamSpeak-3-Servers**!
 
@@ -7,23 +7,15 @@
 
 | Laravel Version | Supported | 
 | --------------- |:---------:|
-| 5.3 | :heavy_check_mark: |
-| 5.4 | :heavy_check_mark: |
-| 5.5 | :heavy_check_mark: |
-| 5.6 | :heavy_check_mark: |
+| 5.5 - 5.8 | :heavy_check_mark: |
+| 6.0 | :heavy_check_mark: |
 
 ## Installation
 
+This package will be autodiscovered, so no further setup is needed.
+
 ```
 composer require micky5991/laravel-ts3admin
-```
-
-**If you use Laravel 5.5+ you are already done, otherwise continue:**
-
-Add Service Provider to your `app.php` configuration-file:
-
-```php
-Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider::class
 ```
 
 ## Configuration

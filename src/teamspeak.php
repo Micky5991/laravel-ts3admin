@@ -2,6 +2,8 @@
 
 return [
 
+    'connect' => env('TS_CONNECT', true),
+
     'host' => env('TS_SERVER_HOST', '127.0.0.1'),
 
     'port' => env('TS_SERVER_PORT', 9987),

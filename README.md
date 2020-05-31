@@ -1,14 +1,15 @@
 # laravel-ts3admin
-[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 5.5 and higher
+[par0noid's ts3admin.class](https://github.com/par0noid/ts3admin.class) integration for Laravel 6 and higher
 
 **INFO:** This package uses a singleton to access a **single** ts3admin.class-object. So you currently **can't access multiple TeamSpeak-3-Servers**!
 
 ### Supported Laravel Versions
 
-| Laravel Version | Supported | 
-| --------------- |:---------:|
-| 5.5 - 5.8 | :heavy_check_mark: |
-| 6.0 | :heavy_check_mark: |
+| Package Version | Laravel Version | Supported | 
+| ----- | --------------- |:---------:|
+| until 1.2.1 | 5.5, 5.6, 5.7, 5.8 | :x: |
+| 1.3.0 | 5.5, 5.6, 5.7, 5.8, 6.x | :x: |
+| 2.0.0 | 6.x, 7.x | :heavy_check_mark: |
 
 ## Installation
 
@@ -20,11 +21,7 @@ composer require micky5991/laravel-ts3admin
 
 ## Configuration
 
-Copy configuration to config-folder: 
-
-```bash 
-$ php artisan vendor:publish --provider=Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider
-``` 
+### Environment configuration
 
 Add environmental variables to your `.env`
 
@@ -37,20 +34,28 @@ TS_QUERY_USERNAME=serveradmin
 TS_QUERY_PASSWORD=supersecretpassword
 ```
 
-After completing all steps from above you should have a configuration file under: `config/teamspeak.php`. There you can configure some other aspects like the name of the ServerQuery.
+### Configuration file
+
+Copy configuration to config-folder: 
+
+```bash 
+$ php artisan vendor:publish --provider="Micky5991\laravel_ts3admin\Providers\TeamspeakServiceProvider"
+``` 
+
+After completing the step from above you should have a configuration file under: `config/teamspeak.php`. There you can configure some other aspects like the name of the ServerQuery.
 
 ## Example
 
 An example for a controller to the `/clients` endpoint that lists all connected clients.
 
 ```php
-Route::get('/users', function(\ts3admin $ts) {
+Route::get('/users', function(par0noid\ts3admin $ts) {
     $result = $ts->clientList();
-    if($ts->succeeded($result)) {
-        $users = $ts->getElement("data", $result);
-        dd($users);
-    } else {
+    if($ts->succeeded($result) == false) {
         return "Connection failed";
     }
+    
+    $users = $ts->getElement("data", $result);
+    dd($users);
 });
 ```

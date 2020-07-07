@@ -63,12 +63,25 @@ class TeamspeakServiceProvider extends ServiceProvider
             }
 
             $name = config('teamspeak.nickname');
+            $success = false;
             if ($name != null) {
-                $nameChangeResponse = $ts->setName($name);
+                $tries = 0;
 
-                if($ts->succeeded($nameChangeResponse) == false) {
-                    throw new TeamspeakConnectionException(sprintf('Unable to change username to %s, error: %s',
-                        $serverPort,
+                do {
+                    $tries++;
+
+                    $targetName = $name;
+                    if($tries != 1) {
+                        $targetName = sprintf("%s (%i)", $name, $tries);
+                    }
+
+                    $nameChangeResponse = $ts->setName($targetName);
+                    $success = $ts->succeeded($nameChangeResponse);
+                } while($success == false && $tries < 20);
+
+                if($success == false) {
+                    throw new TeamspeakConnectionException(sprintf('Unable to change username to %s after 20 tries, error: %s',
+                        $name,
                         $ts->getDebugLog()[0]));
                 }
             }
